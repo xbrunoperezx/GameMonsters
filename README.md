@@ -1,4 +1,4 @@
-# 🗺️ [Nombre de tu Videojuego]
+# 🗺️ [Dragon Soul]
 
 Una aventura épica de exploración basada en mapas, desarrollada íntegramente con **HTML5, CSS3 y JavaScript Nativo**. Explora biomas peligrosos, gestiona tus recursos y sobrevive a los encuentros con criaturas legendarias.
 
