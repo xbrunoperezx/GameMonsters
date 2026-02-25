@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interfaz del Videojuego</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./img/dragon.png" /> <!--para añadir el favicon en este caso el dragon añadire ya que no quiero descargar mas imagenes-->
+  <script src="./espanol.js"></script>
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <header class="menu">
+    <button>Guardar Partida</button>
+    <button>Cargar Partida</button>
+    <button>Gestor de Contenidos</button>
+  </header>
+
+
+  <main class="game-container">
+    <aside class="character-sheet">
+      <div id="mostrar">
+        
+        <h2 class="title"></h2>
+        
+        <p class="name">
+          <img src="./img2/name1.png" alt="Nombre" />
+          
+        </p>
+        <p class="strength">
+          <img src="./img2/fuerza.png" alt="Fuerza" />
+          
+        </p>
+        <p class="defense">
+          <img src="./img2/defense.png" alt="Defensa" />
+         
+        </p>
+        <p class="health">
+          <img src="./img2/heart.png" alt="Vida" />
+          
+        </p>
+        <p class="gold">
+          <img src="./img2/oro1.png" alt="Oro" />Oro: <span id="goldQuantity"></span> <!-- Aquí se mostrará el oro -->
+        </p>
+        <p class="potions">
+          <img src="./img2/potion.png" alt="Pociones" />Pociones: <span id="potionQuan"></span> <!-- Aquí se mostrará las pociones -->
+        </p>
+    
+      </div>
+    </aside>
+    
+
+
+    <div class="location">
+      <img src="" alt="Imagen de localización" class="background" />
+      <img id="monsterSmall" src="" alt="" class=" monster small " />
+      <img id="monsterBig" src="" alt="" class=" monster large " />
+      <div class="room-name">🐉Te encuentras en el Pasillo</div>
+    </div>
+    
+    <div>
+      <section class="messages">
+        <p>¡Bienvenido al juego XXXX!. Tu misión es derrotar al dragón que vive en las mazmorras de al lado del pueblo
+          que esta aterrorizando a los habitantes.</p>
+      </section>
+
+      <div class="commands">
+        <input id="info" type="text" placeholder="Escribe Ayuda para obtener imformación..." />
+        <button id="botonEnviar">Enviar</button>
+      </div>
+    </div>
+
+
+
+    <div class="compass-container">
+      <div class="compass">
+        <button class="north">Norte</button>
+        <button class="south">Sur</button>
+        <button class="east">Este</button>
+        <button class="west">Oeste</button>
+        <div class="center-decor">🧭</div>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-level" id="progress-level">Nivel 3 (150/300 XP)</div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        <div class="progress-text" id="progress-text">50%</div>
+      </div>
+    </div>
+
+
+
+  </main>
+</body>
+
+</html>

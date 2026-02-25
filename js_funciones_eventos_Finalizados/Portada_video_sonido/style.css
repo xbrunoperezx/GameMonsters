@@ -1,0 +1,132 @@
+/* Estilos generales */
+body {
+    background-color: #111;
+    color: white;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    padding: 20px;
+    background-image: url("./imagen-inteligencia-artificial-dragones-fantasia_23-2150400895.avif");
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    height: 100vh; /* Asegura que cubre toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Asegurar que el contenedor principal ocupa toda la pantalla */
+.container {
+    padding-top: 40px; /* Añadimos un poco de espacio para el título */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh; /* Hace que ocupe toda la pantalla */
+    gap: 20px; /* Espacio entre título y video */
+}
+
+/* Ajustes específicos del título */
+.game-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff4500; /* Naranja llamativo */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Efecto de sombra más intenso */
+    margin-bottom: 30px;
+}
+
+/* Estilo para el botón elegante */
+.medieval-button-elegante {
+    margin-top: 20 px;
+    position: relative;
+    top: 0px;
+    right: 20px;
+    background-color: #3d2b1f; /* Marrón oscuro con un toque más sofisticado */
+    color: #f4e1a1; /* Color dorado suave para el texto */
+    font-size: 20px;
+    padding: 12px 25px;
+    border: 2px solid #b87e3a; /* Borde dorado sutil */
+    border-radius: 10px; /* Bordes más suaves y redondeados */
+    text-transform: uppercase; /* Mayúsculas para dar fuerza */
+    font-family: 'Garamond', serif; /* Fuente elegante y clásica */
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: all 0.4s ease-in-out; /* Transición suave */
+}
+
+/* Efecto de hover */
+.medieval-button-elegante:hover {
+    background-color: #b87e3a; /* Fondo dorado suave */
+    color: #3d2b1f; /* Color del texto oscuro */
+    border-color: #f4e1a1; /* Borde dorado brillante */
+    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.7); /* Sombra dorada brillante */
+    transform: scale(1.1); /* El botón se hace un poco más grande */
+}
+
+/* Efecto al presionar el botón */
+.medieval-button-elegante:active {
+    transform: scale(0.95); /* Simula que el botón se presiona */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* Sombra más ligera al presionar */
+}
+
+/* Asegurar que el video tiene un tamaño adecuado y no cubre todo */
+.video-container {
+    width: 80%; /* Reduce el ancho del video */
+    max-width: 1300px; /*  No se agranda más de este tamaño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 80%; /* Se adapta al contenedor */
+    height: auto; /* Mantiene proporciones */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+}
+
+/* Icono del altavoz */
+.altavoz {
+    width: 50px; /* Icono más pequeño */
+    height: auto; /* Mantiene proporciones */
+    position: fixed; /* Fijado en la pantalla */
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease; /* Transición suave para filtro y transformación */
+    
+}
+
+.altavoz:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    opacity: 1;
+}
+
+.altavoz-muted {
+    filter: grayscale(100%) brightness(0.5) hue-rotate(200deg);  /* Filtro de escala de grises, oscurecido y cambio de color */
+    transform: scale(1.2); /* Aumentamos ligeramente el tamaño para darle énfasis */
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);  /* Sombra roja para indicar que está muteado */
+}
+
+/* Estilo cuando el sonido está activado */
+.altavoz-activated {
+    filter: none; /* Sin filtro cuando está activado */
+    transform: scale(1); /* Volvemos al tamaño original */
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.7);  /* Sombra verde para indicar que está activado */
+}
+
+/* Efecto visual de "click" cuando se presiona */
+.altavoz:active {
+    transform: scale(0.95);  /* Hace que el altavoz se "comprese" al hacer clic */
+}
+
+/* Texto de introducción */
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 80%;
+}

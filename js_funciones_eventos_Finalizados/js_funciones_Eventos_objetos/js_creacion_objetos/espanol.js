@@ -1,0 +1,1 @@
+const DIRECCION_NORTE="Norte"

@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ajusta el alto mínimo para cubrir toda la pantalla */
+    background-color: #111;
+    color: #fff;
+    background-image: url(./img2/imagen-inteligencia-artificial-dragones-fantasia_23-2150400895.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fija la imagen al fondo */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    position: relative;
+    z-index: 10;
+    
+}
+
+.menu button {
+    background-color: #3a2d24;
+    color: #d4af37;
+    font-size: 18px;
+    font-family: 'UnifrakturCook', cursive;
+    padding: 14px 28px;
+    margin: 0 12px;
+    border: none;
+    border-radius: 10px; /* Forma de píldora */
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4); /* Iluminación dorada */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu button:hover {
+    transform: translateY(-5px); /* Flotación */
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.6); /* Sombra más brillante */
+}
+
+.menu button:active {
+    transform: translateY(2px); /* Efecto de presión */
+    box-shadow: 0 8px 15px rgba(255, 215, 0, 0.4); /* Reducir la sombra */
+}
+
+.menu button::before {
+    content: '\2694 '; /* Espada medieval */
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .menu button {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column; /* Los botones se apilan en dispositivos pequeños */
+    }
+    .menu button {
+        margin: 6px 0;
+        padding: 10px 18px;
+    }
+}
+
+.game-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    
+}
+/*aqui*/
+.location {
+    flex: 1;
+    position: relative;
+    background-color: #3a2d24;
+    color: #d4af37;
+    padding: 20px;
+    border: 4px solid #8b5a2b;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    overflow: hidden;
+    width: 90%; /* Cambia a porcentaje para que sea adaptable */
+    max-width: 500px; /* Mantén un límite máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.background {
+    width: 100%;
+    height: auto;
+    border: 2px solid #5c4033;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto de imagen de monstruo */
+.monster {
+    position:relative;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    opacity: 0.9;
+    filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, 0.7));
+    transform-origin: center;
+    max-width: 57%; /* Limita el ancho relativo al contenedor */
+    max-height: 30%; /* Limita la altura */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+.monster:hover {
+    transform: scale(1.1) rotate(-2deg);
+    opacity: 1;
+}
+
+/* Monstruo pequeño */
+.small {
+    top: -38%; /* Centrado vertical relativo al contenedor */
+    left: 21%; /* Relativo al contenedor */
+    width: 69%; /* Proporción adecuada */
+    animation: float 5s infinite ease-in-out;
+}
+
+/* Monstruo grande */
+.large {
+    top: -37%; /*uste relativo */
+    right: 17; /* Relativo al contenedor */
+    width: 70%; /* Tamaño relativo */
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animación de latido/pulsación */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Marco para el texto */
+.room-name {
+    margin-left: 10%;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1rem;
+    color: #f5d37d;
+    border: 2px solid #9e6f21;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-name:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+.character-sheet {
+    font-family: 'Cinzel', serif;
+    background-color: #3a2d24;
+    color: #d4af37;
+    padding: 25px;
+    border: 5px solid #8b5a2b;
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.character-sheet h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #8b5a2b;
+    display: inline-block;
+}
+
+.character-sheet p {
+    font-size: 16px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.character-sheet p img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.character-sheet .gold img {
+    content: url('./img2/oro1.png'); /* Icono de moneda */
+}
+
+.character-sheet .potions img {
+    content: url('./img2/potion.png'); /* Icono de poción */
+}
+
+.character-sheet .strength img {
+    content: url('./img2/fuerza.png'); /* Icono de fuerza */
+}
+
+.character-sheet .defense img {
+    content: url('./img2/defense.png'); /* Icono de defensa */
+}
+
+.character-sheet .health img {
+    content: url('./img2/heart.png'); /* Icono de corazón (vida) */
+}
+
+.character-sheet .name img {
+    content: url('./img2/name1.png'); /* Icono de personaje (nombre) */
+}
+
+
+.messages {
+    flex: 1;
+    background-color: #3a2d24;
+    color: #d4af37;
+    padding: 15px;
+    border: 4px solid #8b5a2b;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    width: 350px;
+}
+
+/* Personalización del Scroll */
+.messages::-webkit-scrollbar {
+    width: 7px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #8b5a2b;
+    border-radius: 5px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #3a2d24;
+    border-radius: 10px;
+}
+
+.commands {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    animation: fadeIn 1.6s ease-in-out;
+    margin-top: 25px;
+}
+
+.commands input {
+    width: 90%;
+    padding: 10px;
+    border: 4px solid #8b5a2b;
+    background-color: #333;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.commands input:focus {
+    border-color: #00bcd4;  /* Azul claro al enfocar */
+    outline: none;
+}
+
+.commands button {
+    padding: 10px 20px;
+    border: 5px solid #8d562ee7;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: cover;
+    
+    
+}
+
+
+/*aqui los botones de movimiento*/
+
+.compass-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa el ancho completo */
+    height: auto; /* Permite que el contenido defina la altura */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho/alto */
+}
+
+.compass {
+    margin-right: 12%;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-image:url("./img2/brujula.png");
+    background-size: 150%; /* Aumenta el tamaño de la imagen */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+    border: 8px solid #d4af37;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #000;
+    display: flex; /* Añade flexbox dentro de la brújula */
+    align-items: center;
+    justify-content: center;
+}
+
+.compass .center-decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: #d4af37;
+    border: 5px solid #5a3e1b;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    line-height: 100px;
+    box-shadow: 0 4px #3d2b1f;
+}
+
+.compass button {
+    position: absolute;
+    background-color: #4e3629; /* Color más oscuro de madera */
+    color: #f0c040; /* Un dorado suave */
+    font-family: 'Papyrus', fantasy;
+    border: 2px solid #f0c040; /* Borde dorado más delgado */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1); /* Asegura que el tamaño inicial sea el adecuado */
+}
+
+.compass .north {
+    top: 10px;
+ 
+}
+.compass .south {
+    bottom: 10px;
+  
+}
+.compass .east {
+    right: 10px;
+  
+}
+.compass .west {
+    left: 10px;
+  
+}
+
+/* Efecto hover */
+.compass button:hover {
+    background-color: #6f4e37; /* Un tono más cálido de madera */
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Sombra más intensa al pasar el ratón */
+    border-color: #f0c040; /* El borde mantiene el dorado */
+}
+
+/* Efecto de clic */
+.compass button:active {
+    background-color: #3e2b1a; /* Oscurece más al hacer clic */
+    transform: scale(0.95); /* Reduce el tamaño al presionar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra más ligera */
+}
+
+@media (max-width: 768px) {
+    .compass {
+        width: 200px;
+        height: 200px;
+    }
+
+    .compass button {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 12px;
+    }
+
+    .compass .center-decor {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 20px;
+    }
+}
+
+.progress-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.progress-level {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #d4af37;
+    font-family: 'Papyrus', fantasy;
+    font-size: 16px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, #8b0000, #d4af37);
+    border: 3px solid #5a3e1b;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.progress-bar-fill {
+    width: 50%; /* Representa el progreso, ajustable dinámicamente */
+    height: 100%;
+    background: linear-gradient(to right, #ff4500, #ffcc00);
+    border-radius: 15px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Papyrus', fantasy;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+
+
+
+.ayuda-container {
+    position: fixed;
+    top: 65%;
+    right: 8%;
+    transform: translate(-50%, -20%);
+    background-color: #3a2d24; /* Marrón oscuro */
+    border: 10px solid #5a3825; /* Bordes oscuros tipo madera */
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    font-family: 'UnifrakturCook', cursive;
+    color: #d4af37; /* Letras amarillo dorado */
+    z-index: 1000;
+}
+
+.ayuda-box h2 {
+    font-size: 24px;
+    color: #d4af37; /* Letras doradas */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #8b5a2b; /* Línea de separación marrón */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.ayuda-box p {
+    font-size: 18px;
+    margin: 5px 0;
+    background: rgba(139, 90, 43, 0.4); /* Fondo marrón semitransparente */
+    padding: 5px;
+    border-radius: 5px;
+    color: #d4af37; /* Texto amarillo dorado */
+}
+
+.ayuda-box button {
+    background: #8b5a2b; /* Marrón medio */
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Uncial Antiqua', cursive;
+    border: 3px solid #d4af37; /* Borde dorado */
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.ayuda-box button:hover {
+    background: #d4af37; /* Botón dorado al pasar el mouse */
+    border-color: #8b5a2b;
+    color: #3a2d24; /* Texto marrón */
+    transform: scale(1.05);
+}

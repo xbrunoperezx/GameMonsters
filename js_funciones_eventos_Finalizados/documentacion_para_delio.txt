@@ -1,0 +1,32 @@
+                 			tarea videojuego Dwec
+
+he añadido algunas funcionalidades extras el videojuego :
+
+1 he implementado un input, para que en el campo de escribir mensajes y darle al boton de enviar,
+tambien usando la tecla de "Enter" me envie los mensajes tb
+
+2 tambien e añadido una funcionalidad exrta en la funcion de comprobar que escribiendo la palabra de 
+pocion y añadiendole unnumeor compro ese nuemro de pociones para no tener que ir comprando una por una
+
+3 implementamos una funcion nueva de "mostrarMensaje" para no tener que estar cada vez que qeremos  ir a 
+los querySelector de los mensajes, solo llamaremos a esa funcion y ya nos llama ella directamente, ademas añadimos
+un elemento para que la ventana de mensajes se pueda hacer scroll
+
+4 he añadido tambien a la funcion del combate, en la parte de la probabilidad de que al derrotar al enemigo te aparezcan
+obejtos (tales como espada o escudos) tambien la opcion de que al derrotarlo , reciba oro y una muy baja probabilidad
+de que me encuentre una pocion la puse baja por que si no no tendria gracia pasarme por la tienda ya que cada vez que 
+mate un enemigo este me estaria dando una pocion.
+
+5 he implementado dos nuevas funciones para  obtener ayuda mediante  el input. gracias a estas dos funciones podemos
+con solo escribir la palabra "ayuda" ir a una nueva pagina que nos mostrara las opciones que podemos realizar en nuestra
+aventura ( buscar oro... comprar pociones etc...)
+
+
+-------------------------------Errores que no e sido capaz de solucionarlo por------------------------------------
+
+-cuando realizo el combate y encuentro un objeto que me mejora, no se me actualiza en la interfaz del jugador.
+.pero si me realiza el combate y me baja la salud
+-creo que tengo algun error en la funcion del combate cuando acaba todo, tengo comentada la linea de la funcion de renewMonsters(), si llamo
+-a la funcion aveces aparece bien el mousntruo con la foto y los datos pero aveces solo aparece el texto de combate sin la foto
+
+-pero en cambio una vez me salio el JEFE y si me mostro su imagen
